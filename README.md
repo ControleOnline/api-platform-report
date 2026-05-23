@@ -1,9 +1,9 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/controleonline/api-platform-dashboard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/controleonline/api-platform-dashboard/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/controleonline/api-platform-report/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/controleonline/api-platform-report/?branch=master)
 
-# dashboard
+# report
 
 
-`composer require controleonline/dashboard:dev-master`
+`composer require controleonline/report:dev-master`
 
 
 Add Service import:
@@ -11,5 +11,5 @@ config\services.yaml
 
 ```yaml
 imports:
-    - { resource: "../modules/controleonline/dashboard/config/services/services.yaml" }    
+    - { resource: "../modules/controleonline/report/config/services/services.yaml" }    
 ```

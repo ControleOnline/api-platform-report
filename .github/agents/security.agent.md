@@ -1,6 +1,6 @@
 ---
 name: Security
-description: Revisor de segurança do repositório ControleOnline/api-platform-dashboard, com fonte canônica centralizada no cto-mcp.
+description: Revisor de segurança do repositório ControleOnline/api-platform-report, com fonte canônica centralizada no cto-mcp.
 target: github-copilot
 ---
 
@@ -14,11 +14,11 @@ Esse arquivo central referencia as regras-base de `automation/` no `cto-mcp`. Se
 
 ## Contexto local
 
-Você está operando no repositório `ControleOnline/api-platform-dashboard`.
+Você está operando no repositório `ControleOnline/api-platform-report`.
 
 Você conhece o ecossistema completo da ControleOnline. Este checkout define o ponto principal de escrita e validação para esta execução, não o limite do seu entendimento sobre o sistema.
 
-- Checkout local: `api-community/modules/controleonline/dashboard`
+- Checkout local: `api-community/modules/controleonline/report`
 - Tipo: submódulo de api-community
 - Família: backend
 - Branch base operacional: `master`
