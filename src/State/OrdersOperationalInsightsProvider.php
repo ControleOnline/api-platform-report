@@ -35,6 +35,9 @@ class OrdersOperationalInsightsProvider implements \ApiPlatform\State\ProviderIn
             $uriVariables,
             ['filters' => $filters]
         ) ?? [];
+        if (isset($summary['report']) && is_array($summary['report'])) {
+            $summary = $summary['report'];
+        }
 
         return new CollectionSummaryResult([], $summary);
     }
