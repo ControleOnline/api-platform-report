@@ -105,7 +105,7 @@ class PeopleAttendanceReportService
         $rows = [];
         foreach ($peopleIds as $peopleId) {
             $profile = $profilesByPeopleId[$peopleId] ?? null;
-            $department = $this->normalizeText($profile?->getDepartment());
+            $department = $this->normalizeText($profile?->getDepartmentLabel());
 
             if ($departmentFilter !== '' && !$this->textContains($department, $departmentFilter)) {
                 continue;
@@ -523,8 +523,8 @@ class PeopleAttendanceReportService
         };
 
         $peopleLabel = $this->resolvePeopleLabel($peopleEntity);
-        $jobTitle = trim((string) ($profile?->getJobTitle() ?? ''));
-        $jobFunction = trim((string) ($profile?->getJobFunction() ?? ''));
+        $jobTitle = trim((string) ($profile?->getJobTitleLabel() ?? ''));
+        $jobFunction = trim((string) ($profile?->getJobFunctionLabel() ?? ''));
         $absenceLabel = $hasAbsence
             ? ($justified ? 'Falta justificada' : 'Falta')
             : ($status === 'late' || $status === 'late_overtime' || $status === 'overtime' ? '-' : '-');
@@ -633,6 +633,7 @@ class PeopleAttendanceReportService
             ->innerJoin('profile.peopleLink', 'peopleLink')
             ->innerJoin('peopleLink.people', 'people')
             ->innerJoin('peopleLink.company', 'company')
+            ->leftJoin('profile.departmentCategory', 'departmentCategory')
             ->where('peopleLink.company = :company')
             ->andWhere('peopleLink.linkType = :linkType')
             ->setParameter('company', $company)
@@ -646,7 +647,7 @@ class PeopleAttendanceReportService
 
         if ($department !== '') {
             $queryBuilder
-                ->andWhere('LOWER(COALESCE(profile.department, \'\')) LIKE :department')
+                ->andWhere('LOWER(COALESCE(departmentCategory.name, profile.department, \'\')) LIKE :department')
                 ->setParameter('department', '%' . strtolower($department) . '%');
         }
 
