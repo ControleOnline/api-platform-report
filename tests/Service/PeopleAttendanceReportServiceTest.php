@@ -97,6 +97,7 @@ class PeopleAttendanceReportServiceTest extends TestCase
         self::assertSame('Falta justificada', $absenceRow['absenceLabel']);
         self::assertSame(1, $result['summary']['late']);
         self::assertSame(1, $result['summary']['absences']);
+        self::assertSame(1, $result['summary']['overtime']);
         self::assertSame(1, $result['summary']['justifiedAbsences']);
     }
 
