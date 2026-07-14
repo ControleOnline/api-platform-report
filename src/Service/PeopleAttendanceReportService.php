@@ -633,7 +633,7 @@ class PeopleAttendanceReportService
             ->innerJoin('profile.peopleLink', 'peopleLink')
             ->innerJoin('peopleLink.people', 'people')
             ->innerJoin('peopleLink.company', 'company')
-            ->leftJoin('profile.departmentCategory', 'departmentCategory')
+            ->leftJoin('profile.department', 'department')
             ->where('peopleLink.company = :company')
             ->andWhere('peopleLink.linkType = :linkType')
             ->setParameter('company', $company)
@@ -647,7 +647,7 @@ class PeopleAttendanceReportService
 
         if ($department !== '') {
             $queryBuilder
-                ->andWhere('LOWER(COALESCE(departmentCategory.name, profile.department, \'\')) LIKE :department')
+                ->andWhere('LOWER(COALESCE(department.name, \'\')) LIKE :department')
                 ->setParameter('department', '%' . strtolower($department) . '%');
         }
 
