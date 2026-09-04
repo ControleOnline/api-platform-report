@@ -1,0 +1,3 @@
+controleonline_report:
+    resource: ../../src/Controller/
+    type: attribute

@@ -1,5 +1,5 @@
 {
-    "name": "controleonline/dashboard",
+    "name": "controleonline/report",
     "license": "MIT",
     "autoload": {
         "psr-4": {

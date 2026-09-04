@@ -1,10 +1,6 @@
-## Escopo
-- Modulo de dashboards e visoes consolidadas da API.
-- Serve para recursos agregados e leitura resumida de dados operacionais.
+## Ponto de entrada
 
-## Quando usar
-- Prompts sobre indicadores, cards de dashboard, endpoints de resumo e consultas agregadas.
-
-## Limites
-- Evitar colocar regra de escrita principal aqui.
-- Sempre que possivel, `dashboard` deve consumir dados dos modulos de dominio em vez de virar dono deles.
+- A documentação funcional e de regras deste modulo vive na wiki do proprio repositório e na wiki principal da API.
+- Regras transversais de qualidade, modularizacao e limites de componente vivem em `https://github.com/ControleOnline/agents-mcp/blob/master/skills/shared/code-quality.md`.
+- Quando houver detalhe especifico de implementacao, prefira comentar no codigo em ingles perto da regra.
+- Este arquivo deve ficar curto e servir apenas como ponte para as fontes oficiais.

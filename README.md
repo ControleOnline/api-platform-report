@@ -1,15 +1,13 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/controleonline/api-platform-dashboard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/controleonline/api-platform-dashboard/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/controleonline/api-platform-report/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/controleonline/api-platform-report/?branch=master)
 
-# dashboard
-
-
-`composer require controleonline/dashboard:dev-master`
+# report
 
 
-Add Service import:
-config\services.yaml
+## Instalacao
+[Instalacao na wiki](https://github.com/ControleOnline/api-platform-report/wiki/Instalacao)
 
-```yaml
-imports:
-    - { resource: "../modules/controleonline/dashboard/config/services/services.yaml" }    
-```
+## Links obrigatorios
+
+- [Documentacao para clientes](http://ajuda.controleonline.com/)
+- [Site institucional](http://controleonline.com/)
+- [Wiki tecnica](https://github.com/ControleOnline/api-platform-report/wiki)

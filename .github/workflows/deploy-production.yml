@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.CONTROLEONLINE }}
           port: ${{ secrets.PORT }}        
           script: |
-                  cd ~/sistemas/controleonline/api/modules/controleonline/dashboard
+                  cd ~/sistemas/controleonline/api/modules/controleonline/report
                   git reset --hard origin/master
                   git pull origin master
                   cd ~/sistemas/controleonline/api/
