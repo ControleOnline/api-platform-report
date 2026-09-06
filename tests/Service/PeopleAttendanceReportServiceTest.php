@@ -3,6 +3,7 @@
 namespace ControleOnline\Tests\Service;
 
 use ControleOnline\Entity\EmployeeProfile;
+use ControleOnline\Entity\Category;
 use ControleOnline\Entity\People;
 use ControleOnline\Entity\PeopleAccessEvent;
 use ControleOnline\Entity\PeopleAbsence;
@@ -34,8 +35,8 @@ class PeopleAttendanceReportServiceTest extends TestCase
         $employee = $this->createPeople(11, 'Ana Souza');
         $profile = new EmployeeProfile();
         $profile->setPeopleLink((new PeopleLink())->setCompany($company)->setPeople($employee)->setEnabled(true));
-        $profile->setDepartment('Estetica');
-        $profile->setJobTitle('Recepcionista');
+        $profile->setDepartment((new Category())->setName('Estetica'));
+        $profile->setJobTitle((new Category())->setName('Recepcionista'));
 
         $schedule = new PeopleSchedule();
         $schedule->setCompany($company);
